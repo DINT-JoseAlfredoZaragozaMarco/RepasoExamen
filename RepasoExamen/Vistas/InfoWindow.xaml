@@ -1,0 +1,33 @@
+﻿<Window x:Class="RepasoExamen.Vistas.InfoWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RepasoExamen.Vistas"
+        xmlns:properties="clr-namespace:RepasoExamen.Properties"
+        mc:Ignorable="d"
+        Icon="../assets/info.png"
+        Title="Acerca de" Height="250" Width="800"
+        ShowInTaskbar="False" ResizeMode="NoResize">
+    <Window.Resources>
+        <Style TargetType="{x:Type TextBlock}">
+            <Setter Property="FontSize" Value="25"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Margin" Value="10"/>
+        </Style>
+    </Window.Resources>
+    
+    <StackPanel>
+        <TextBlock HorizontalAlignment="Center" FontSize="40">Componentes</TextBlock>
+        <TextBlock>Autor: Jose Alfredo Zaragoza Marco</TextBlock>
+        <TextBlock>
+            <Run>Servidor: </Run>
+            <Run Text="{Binding Source={x:Static properties:Settings.Default}, Path=VersionApp, Mode=OneWay}"/>
+        </TextBlock>
+        <Button IsDefault="True" Click="Button_Click">Cerrar</Button>
+    </StackPanel>
+</Window>
