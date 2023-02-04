@@ -3,9 +3,15 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:Convertidores="clr-namespace:RepasoExamen.Convertidores"
              xmlns:local="clr-namespace:RepasoExamen.Vistas"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+
+    <UserControl.Resources>
+        <Convertidores:PrecioConverter x:Key="ConvertidorPrecio"></Convertidores:PrecioConverter>
+    </UserControl.Resources>
+    
     <Grid Background="White">
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>
@@ -14,6 +20,6 @@
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="0" HorizontalAlignment="Center" FontSize="25" Margin="10" Text="{Binding Path=Componente.Nombre}"/>
         <Image Grid.Row="1" Source="{Binding Path=Componente.Foto}" Margin="10"/>
-        <TextBlock Grid.Row="2" Margin="10" FontSize="25" HorizontalAlignment="Center" Text="{Binding Path=Componente.Precio}"/>
+        <TextBlock Grid.Row="2" Margin="10" FontSize="25" HorizontalAlignment="Center" Text="{Binding Converter={StaticResource ConvertidorPrecio}, Path=Componente.Precio}"/>
     </Grid>
 </UserControl>

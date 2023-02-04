@@ -81,6 +81,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Convertidores\PrecioConverter.cs" />
     <Compile Include="Mensajeria\EnviarComponenteSeleccionadoMessage.cs" />
     <Compile Include="Servicios\ServicioNavegacion.cs" />
     <Compile Include="VistasModelo\InfoComponenteWindowVM.cs" />
